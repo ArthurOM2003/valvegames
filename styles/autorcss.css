@@ -1,3 +1,10 @@
+
+@media only screen and (max-device-width: 700px) {
+body { width:400px; }
+}
+@media only screen and (max-device-width: 900px) {
+body { width:100%; }
+
 @font-face {
   font-family: "HL2Font";
   src: url("../fontes/K12HL2.ttf");
