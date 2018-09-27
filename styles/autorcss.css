@@ -1,4 +1,9 @@
 
+@media only screen and (max-device-width: 700px) {
+nav { width:400px; }
+}
+@media only screen and (max-device-width: 900px) {
+nav { width:100%; }
 
 @font-face {
   font-family: "HL2Font";
