@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "HL2Font";
+  src: url("../fontes/K12HL2.ttf");
+}
+@font-face {
+  font-family: "Bahn";
+  src: url("../fontes/Ubahn.ttf");
+}
+@font-face {
+  font-family: "csfont";
+  src: url("../fontes/cs.ttf");
+}
+body{
+  background-image: url("../imgs/urbancamo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+*{
+  margin: 0;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+html, body{
+  padding: 0;
+}
+
+h1{
+  font-family: "csfont";
+  color: white;
+  font-size: 72px;
+  padding-top:10px;
+}
+
+h2{
+  font-family: "csfont";
+  color: white;
+  font-size: 36px;
+}
+
+header{
+  background-color: black;
+  width: calc(100vw/1.5);
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  height: 110px;
+}
+header nav{
+  background-image: url("../imgs/forestcamo.jpg");
+  margin-top: 3px;
+}
+header nav ul li{
+  font-family: "HL2Font";
+  font-size: 24px;
+  display: inline-block;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+a{
+  transition: all .5s ease;
+}
+a:hover{
+  color: yellow;
+}
+
+main{
+    border: 1.5px solid black;
+    border-radius: 12px;
+    background-color: black;
+    opacity: 0.7;
+    width: calc(100vw/1.5);
+    margin: 30px auto 30px auto;
+    text-align: justify;
+    padding: 10px;
+}
+.conteudo{
+  line-height: 5px;
+  font-size: 18px;
+  font-family: arial;
+  color: orange;
+  padding-top: 10px;
+  line-height: 32px;
+}
+
+.conteudo::before{
+  content: 'zzzzz';
+  opacity: 0;
+
+}
+
+#terroristafundo{
+  height: 55vh;
+  width: auto;
+  display: block;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+
+  z-index: -1;
+}
+
+#CTfundo{
+  height: 55vh;
+  width: auto;
+  display: block;
+  position: fixed;
+  bottom: -10px;
+  right: 10px;
+  transform: rotateY(0deg);
+  transform: rotateZ(-10deg);
+  z-index: -1;
+}
