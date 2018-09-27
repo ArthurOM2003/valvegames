@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" href="styles/halflife.css">
     <meta charset="utf-8">
-    <title></title>
+    <title>Valve Games</title>
   </head>
   <body>
     <header>
