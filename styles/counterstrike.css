@@ -79,9 +79,10 @@ main{
   line-height: 5px;
   font-size: 18px;
   font-family: arial;
-  color: orange;
+  color: white;
   padding-top: 10px;
   line-height: 32px;
+  opacity: 1;
 }
 
 .conteudo::before{
@@ -106,9 +107,8 @@ main{
   width: auto;
   display: block;
   position: fixed;
-  bottom: -10px;
+  bottom: -50px;
   right: 10px;
-  transform: rotateY(0deg);
   transform: rotateZ(-10deg);
   z-index: -1;
 }

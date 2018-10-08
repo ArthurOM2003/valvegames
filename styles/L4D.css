@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "HL2Font";
+  src: url("../fontes/K12HL2.ttf");
+}
+@font-face {
+  font-family: "Bahn";
+  src: url("../fontes/Ubahn.ttf");
+}
+@font-face {
+  font-family: "csfont";
+  src: url("../fontes/cs.ttf");
+}
+@font-face {
+    font-family: "tf2font";
+    src: url("../fontes/tf2build.ttf")
+}
