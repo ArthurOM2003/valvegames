@@ -164,13 +164,20 @@ main{
   z-index: -1;
 }
 @media (max-width: 400px){
-  div img{
-    width: 1000px;
-    height: 1000px;
+  div img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     margin-top: 5%;
     margin-left: 2%;
 
   }
+  div p{
+  font-size: 6.5px;
+  text-shadow: 1px 0.5px black;
+  margin-bottom: 2%;
+  color: white;
+}
 
   }
 div img{
