@@ -25,7 +25,7 @@ html, body{
 }
 
 #portal{
-  height: 85px;
+  height: 75px;
   width: 200px;
 }
 
@@ -41,33 +41,6 @@ html, body{
 
   z-index: -1;
 }
-h1.h1{
-	
-}
-.hl2h1{
- font-family: "HL2Font";
- color: orange;
- font-size: 36px;
-}
-
-.hl2h2{
-  font-family: "HL2Font";
-  color: orange;
-}
-
-.csh1{
-  font-family: "csfont";
-  color: white;
-  font-size: 72px;
-  padding-top:10px;
-}
-
-.csh2{
-  font-family: "csfont";
-  color: white;
-  font-size: 36px;
-}
-
 header{
   background-color: black;
   width: calc(100vw/1.5);
@@ -77,7 +50,7 @@ header{
   height: 110px;
 }
 header nav{
-  background-color: orange;
+  background-color: #54aee8;
 }
 header nav ul li{
   font-family: "HL2Font";
@@ -135,24 +108,3 @@ main{
   display: block;
 }
 
-#terroristafundo{
-  height: 55vh;
-  width: auto;
-  display: block;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-
-  z-index: -1;
-}
-
-#CTfundo{
-  height: 55vh;
-  width: auto;
-  display: block;
-  position: fixed;
-  bottom: 0px;
-  right: -100px;
-  transform: rotateY(180deg);
-  z-index: -1;
-}

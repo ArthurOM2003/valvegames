@@ -126,24 +126,3 @@ main{
   display: block;
 }
 
-#terroristafundo{
-  height: 55vh;
-  width: auto;
-  display: block;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-
-  z-index: -1;
-}
-
-#CTfundo{
-  height: 55vh;
-  width: auto;
-  display: block;
-  position: fixed;
-  bottom: 0px;
-  right: -100px;
-  transform: rotateY(180deg);
-  z-index: -1;
-}
