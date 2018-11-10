@@ -4,13 +4,6 @@
   font-family: "HL2Font";
   src: url("../fontes/K12HL2.ttf");
 }
-@font-face {
-  font-family: "Bahn";
-  src: url("../fontes/Ubahn.ttf");
-}
-@font-face {
-  font-family: "csfont";
-  src: url("../fontes/cs.ttf");
 }
 body{
   background-image:url(https://i.imgur.com/pUHHjXt.jpg);
@@ -33,6 +26,9 @@ div h6{
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 3%; 
+}
+h1{
+   font-family: "HL2Font";
 }
 header h1{
   color:white;
