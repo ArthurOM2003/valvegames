@@ -102,6 +102,12 @@ main{
     text-align: justify;
     padding: 10px;
 }
+#uls{
+  display: flex;
+}
+#uls>ul{
+  width:50%;
+}
 .conteudo{
   line-height: 5px;
   font-size: 18px;

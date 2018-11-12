@@ -136,15 +136,24 @@ let HL2 = [
 ];
 const vetorSalvo=JSON.parse(localStorage.getItem("achievements"));
 HL2.forEach(el=> {
-  let li = $('<li><h3 class="lista">'+el.nome+'<input type="checkbox"></h3><p class="desc">'+el.desc+'</li>')
-  ulnfeito.append(li);
-
+  el.li = $('<li><h3 class="lista">'+el.nome+'<input type="checkbox"></h3><p class="desc">'+el.desc+'</li>')
+  ulnfeito.append(el.li);
 });
 const checks=$("input[type='checkbox']");
 if(vetorSalvo!=null){
   HL2.forEach((el,i)=> {
     if(vetorSalvo[i]){
       checks[i].checked=true;
+    }
+  });
+}
+for(let i=0; i<checks.length; i++){
+  checks[i].addEventListener("change",function () {
+    if(this.checked){
+      ulfeito.append(HL2[i].li);
+    }
+    else{
+      ulnfeito.append(HL2[i].li);
     }
   });
 }
