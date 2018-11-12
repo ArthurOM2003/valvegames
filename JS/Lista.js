@@ -1,140 +1,162 @@
+const ulnfeito = $('#achievements')
+const ulfeito = $('#complete')
 let HL2 = [
   {
     nome: 'Keep off the sand!',
-    feito: false
+    desc: ' Cross the antlion beach in chapter Sandtraps without touching the sand.'
   },
   {
     nome: 'Lambda Locator',
-    feito: false
+    desc: 'Find all lambda caches in Half-Life 2.'
   },
   {
     nome: 'Hack Attack!',
-    feito: false
+    desc: 'Kill five enemies with a Manhack.'
   },
   {
     nome: 'Singularity Collapse',
-    feito: false
+    desc: 'Destroy the Citadel\'s reactor core.'
   },
   {
     nome: 'Atomizer',
-    feito: false
+    desc: 'Disintegrate 15 soldiers by throwing them into a Combine ball field.'
   },
   {
     nome: 'Giant Killer',
-    feito: false
+    desc: 'Survive the rooftop strider battle in the ruins of City 17.'
   },
   {
     nome: 'Fight the Power',
-    feito: false
+    desc: 'Shut down the supression device by disabling its generators.'
   },
   {
     nome: 'Counter-Sniper',
-    feito: false
+    desc: 'Kill all of the snipers in City 17.'
   },
   {
     nome: 'Plaza Defender',
-    feito: false
+    desc: 'Survive the generator plaza standoff in chapter Anticitizen One.'
   },
   {
     nome: 'Radiation Levels Detected',
-    feito: false
+    desc: 'Get through the toxic tunnel under City 17 in Half-Life 2.'
   },
   {
     nome: 'Follow Freeman',
-    feito: false
+    desc: 'Gain command of a squad of rebels in the uprising.'
   },
   {
     nome: 'Warden Freeman',
-    feito: false
+    desc: 'Survive the second turret standoff in Nova Prospekt.'
   },
   {
     nome: 'Flushed',
-    feito: false
+    desc: 'Kill an enemy with a toilet.'
   },
   {
     nome: 'Bug Hunt',
-    feito: false
+    desc: 'Use the antlions to kill 50 enemies.'
   },
   {
     nome: 'One Man Army',
-    feito: false
+    desc: 'Destroy six gunships in Half-Life 2.'
   },
   {
     nome: 'Where Cubbage Fears to Tread',
-    feito: false
+    desc: 'Defend Little Odessa from the gunship attack.'
   },
   {
     nome: 'Targetted Advertising',
-    feito: false
+    desc: 'Pin a soldier to the billboard in chapter Highway 17.'
   },
   {
     nome: 'OSHA Violation',
-    feito: false
+    desc: 'Kill 3 enemies using the crane.'
   },
   {
     nome: 'Hallowed Ground',
-    feito: false
+    desc: 'Escort Gregori safely through the church cemetery.'
   },
   {
     nome: 'Zombie Chopper',
-    feito: false
+    desc: 'Play through Ravenholm using only the gravity gun.'
   },
   {
     nome: 'Two Points',
-    feito: false
+    desc: 'Use DOG\'s ball to make a basket in Eli\'s scrapyard.'
   },
   {
     nome: 'Zero-Point Energy',
-    feito: false
+    desc: 'Get the gravity gun in Black Mesa East.'
   },
   {
     nome: 'Blast from the Past',
-    feito: false
+    desc: '	Find the HEV Suit Charger faceplate in Eli\'s scrapyard.'
   },
   {
     nome: 'Revenge!',
-    feito: false
+    desc: 'Destroy the hunter-chopper in Half-Life 2.'
   },
   {
     nome: 'Vorticough',
-    feito: false
+    desc: 'Discover the hidden singing vortigaunt cave in chapter Water Hazard.'
   },
   {
     nome: 'Heavy Weapons',
-    feito: false
+    desc: '	Get the airboat\'s mounted gun.'
   },
   {
-    nome: 'Anchor''s Aweigh!',
-    feito: false
+    nome: 'Anchor\'s Aweigh!',
+    desc: 'Get the airboat.'
   },
   {
     nome: 'Barnacle Bowling',
-    feito: false
+    desc: 'Kill five barnacles with one barrel.'
   },
   {
     nome: 'Trusty Hardware',
-    feito: false
+    desc: 'Get the crowbar.'
   },
   {
     nome: 'What cat?',
-    feito: false
+    desc: 'Break the mini-teleporter in Kleiner\'s lab.'
   },
   {
     nome: 'Malcontent',
-    feito: false
+    desc: 'Escape the apartment block raid.'
   },
   {
     nome: 'Submissive',
-    feito: false
+    desc: 'Put the can in the trash.'
   },
   {
     nome: 'Defiant',
-    feito: false
+    desc: 'Hit the trashcan cop with the can.'
   }
 ];
-HL2.forEach()
+const vetorSalvo=JSON.parse(localStorage.getItem("achievements"));
+HL2.forEach(el=> {
+  let li = $('<li><h3 class="lista">'+el.nome+'<input type="checkbox"></h3><p class="desc">'+el.desc+'</li>')
+  ulnfeito.append(li);
+
+});
+const checks=$("input[type='checkbox']");
+if(vetorSalvo!=null){
+  HL2.forEach((el,i)=> {
+    if(vetorSalvo[i]){
+      checks[i].checked=true;
+    }
+  });
+}
+
 let savebutton = $('#save')
-savebutton.addEventListener('click')
+savebutton.click(function() {
+  let vetor=[];
+  for(let i=0; i<HL2.length; i++){
+    vetor[i]=checks[i].checked;
+  }
+  localStorage.setItem("achievements",JSON.stringify(vetor));
+})
 
 setTimeout(1, load)
 let jogo = $('select')
