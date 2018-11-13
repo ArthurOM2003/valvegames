@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "HL2Font";
+  src: url("../fontes/K12HL2.ttf");
+}
+@font-face {
+  font-family: "Bahn";
+  src: url("../fontes/Ubahn.ttf");
+}
+@font-face {
+  font-family: "csfont";
+  src: url("../fontes/cs.ttf");
+}
+a{
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  padding: 5%;
+  display: block;
+  text-align: center;
+  font-size: 32px;
+  font-family: "Bahn";
+  margin-bottom: 1%;
+}
+script{
+  margin: 0 auto;
+}
