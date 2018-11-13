@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <title>Mate os Pratas!</title>
+    <script src="phaser.min.js"></script>
+    <script src="Boot.js"></script>
+    <script src="Preloader.js"></script>
+    <script src="MainMenu.js"></script>
+    <script src="Level1.js"></script>
+  </head>
+  <body>
+    <script type = "text/javascript">
+    window.onload = function(){
+      var jogo = new Phaser.Game(800,600,Phaser.CANVAS,'');
+      jogo.state.add('Boot',Jogo.Boot);
+      jogo.state.add('Preloader',Jogo.Preloader);
+      jogo.state.add('MainMenu',Jogo.MainMenu);
+      jogo.state.add('Level1',Jogo.Level1);
+
+      jogo.state.start('Boot');
+    };
+    </script>
+  </body>
+</html>
