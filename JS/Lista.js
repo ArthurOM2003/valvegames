@@ -1,5 +1,7 @@
 const ulnfeito = $('#achievements')
 const ulfeito = $('#complete')
+const parabens=$("#parabens-div");
+const title= $
 let HL2 = [
   {
     nome: 'Keep off the sand!',
@@ -134,35 +136,70 @@ let HL2 = [
     desc: 'Hit the trashcan cop with the can.'
   }
 ];
-const vetorSalvo=JSON.parse(localStorage.getItem("achievements"));
-HL2.forEach(el=> {
-  el.li = $('<li><h3 class="lista">'+el.nome+'<input type="checkbox"></h3><p class="desc">'+el.desc+'</li>')
-  ulnfeito.append(el.li);
-});
-const checks=$("input[type='checkbox']");
-if(vetorSalvo!=null){
-  HL2.forEach((el,i)=> {
-    if(vetorSalvo[i]){
-      checks[i].checked=true;
-    }
-  });
+let vetorSalvo=JSON.parse(localStorage.getItem("achievements"));
+let checados=0;
+if(vetorSalvo==null){
+  vetorSalvo=[];
+  for(let i=0; i<HL2.length; i++){
+    vetorSalvo[i]={
+      val:false,
+      nome:HL2[i].nome,
+      desc:HL2[i].desc
+    };
+  }
 }
-for(let i=0; i<checks.length; i++){
-  checks[i].addEventListener("change",function () {
+function dourado(){
+  if(checados==vetorSalvo.length){
+    ulfeito.addClass("cemporcento");
+    parabens.removeClass("oculto");
+  }
+}
+function desdourado(){
+  ulfeito.removeClass("cemporcento");
+  parabens.addClass("oculto");
+}
+vetorSalvo.forEach((el,i)=> {
+  el.check=$('<input type="checkbox">');
+  el.li = $('<li style="order:'+i+'"></li>');
+  const h3=$('<h3 class="lista"></h3>');
+  h3.html(el.nome);
+  h3.append(el.check);
+  el.li.append(h3);
+  el.li.append('<p class="desc">'+el.desc+'</p>');
+
+  if(vetorSalvo[i].val){
+    ulfeito.append(el.li);
+    el.check[0].checked=true;
+    checados++;
+  }
+  else{
+    ulnfeito.append(el.li);
+  }
+
+  el.check[0].addEventListener("change",function () {
     if(this.checked){
-      ulfeito.append(HL2[i].li);
+      ulfeito.append(el.li);
+      checados++;
+      dourado();
     }
     else{
-      ulnfeito.append(HL2[i].li);
+      ulnfeito.append(el.li);
+      checados--;
+      desdourado();
     }
   });
-}
-
+});
+dourado();
 let savebutton = $('#save')
 savebutton.click(function() {
   let vetor=[];
-  for(let i=0; i<HL2.length; i++){
-    vetor[i]=checks[i].checked;
+  for(let i=0; i<vetorSalvo.length; i++){
+    console.log(vetorSalvo[i].check[0].checked);
+    vetor[i]={
+      val:vetorSalvo[i].check[0].checked,
+      nome:vetorSalvo[i].nome,
+      desc:vetorSalvo[i].desc
+    };
   }
   localStorage.setItem("achievements",JSON.stringify(vetor));
 })

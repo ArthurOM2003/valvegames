@@ -11,3 +11,7 @@ cheet('z a p z a p', function () {
 function cortaMusica2(){
   audioZap.pause();
 }
+
+cheet('t h e c a k e', function () {
+  alert("is a lie!")
+});
