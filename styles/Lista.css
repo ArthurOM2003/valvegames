@@ -184,3 +184,11 @@ input[type="checkbox"]{
   margin: 0 50%;
   transform: translateX(-50%);
 }
+main h1{
+	text-align: center;
+	color:#00FF9A;
+	text-shadow: 2px 2px black;
+	font-size: 30px;
+	padding-bottom: 2%;
+	padding-top:1%;
+}
